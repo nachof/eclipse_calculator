@@ -39,39 +39,27 @@ public class DataEntryActivity extends Activity {
 	private void doCalculateAction() {
 		Intent intent = new Intent(this, ResultsActivity.class);
 		
-		intent.putExtra(EXTRA_ATTACKER_SHIP, attackerShipBundle());
-		intent.putExtra(EXTRA_DEFENDER_SHIP, defenderShipBundle());
+		intent.putExtra(EXTRA_ATTACKER_SHIP, shipBundle("attack"));
+		intent.putExtra(EXTRA_DEFENDER_SHIP, shipBundle("defense"));
 		startActivity(intent);
 	}
 
-	private Bundle attackerShipBundle() {
+	private Bundle shipBundle(String shipPrefix) {
 		Bundle ship = new Bundle();
-		
-		getShipParameter(ship, ShipKey.KEY_SHIP_COUNT,         R.id.attackFleetShipCount);
-		getShipParameter(ship, ShipKey.KEY_HULL,               R.id.attackFleetHull);
-		getShipParameter(ship, ShipKey.KEY_ION_CANNONS,        R.id.attackFleetIonCannons);
-		getShipParameter(ship, ShipKey.KEY_PLASMA_CANNONS,     R.id.attackFleetPlasmaCannons);
-		getShipParameter(ship, ShipKey.KEY_PLASMA_MISSILES,    R.id.attackFleetPlasmaMissiles);
-		getShipParameter(ship, ShipKey.KEY_ANTIMATTER_CANNONS, R.id.attackFleetAntimatterCannons);
-		getShipParameter(ship, ShipKey.KEY_COMPUTER,           R.id.attackFleetComputer);
-		getShipParameter(ship, ShipKey.KEY_SHIELD,             R.id.attackFleetShield);
-		getShipParameter(ship, ShipKey.KEY_INITIATIVE,         R.id.attackFleetInitiative);
+		getShipParameter(ship, ShipKey.KEY_SHIP_COUNT,         getIdentifier(shipPrefix + "FleetShipCount"));
+		getShipParameter(ship, ShipKey.KEY_HULL,               getIdentifier(shipPrefix + "FleetHull"));
+		getShipParameter(ship, ShipKey.KEY_ION_CANNONS,        getIdentifier(shipPrefix + "FleetIonCannons"));
+		getShipParameter(ship, ShipKey.KEY_PLASMA_CANNONS,     getIdentifier(shipPrefix + "FleetPlasmaCannons"));
+		getShipParameter(ship, ShipKey.KEY_PLASMA_MISSILES,    getIdentifier(shipPrefix + "FleetPlasmaMissiles"));
+		getShipParameter(ship, ShipKey.KEY_ANTIMATTER_CANNONS, getIdentifier(shipPrefix + "FleetAntimatterCannons"));
+		getShipParameter(ship, ShipKey.KEY_COMPUTER,           getIdentifier(shipPrefix + "FleetComputer"));
+		getShipParameter(ship, ShipKey.KEY_SHIELD,             getIdentifier(shipPrefix + "FleetShield"));
+		getShipParameter(ship, ShipKey.KEY_INITIATIVE,         getIdentifier(shipPrefix + "FleetInitiative"));
 		return ship;
 	}
 
-	private Bundle defenderShipBundle() {
-		Bundle ship = new Bundle();
-		
-		getShipParameter(ship, ShipKey.KEY_SHIP_COUNT,         R.id.defenseFleetShipCount);
-		getShipParameter(ship, ShipKey.KEY_HULL,               R.id.defenseFleetHull);
-		getShipParameter(ship, ShipKey.KEY_ION_CANNONS,        R.id.defenseFleetIonCannons);
-		getShipParameter(ship, ShipKey.KEY_PLASMA_CANNONS,     R.id.defenseFleetPlasmaCannons);
-		getShipParameter(ship, ShipKey.KEY_PLASMA_MISSILES,    R.id.defenseFleetPlasmaMissiles);
-		getShipParameter(ship, ShipKey.KEY_ANTIMATTER_CANNONS, R.id.defenseFleetAntimatterCannons);
-		getShipParameter(ship, ShipKey.KEY_COMPUTER,           R.id.defenseFleetComputer);
-		getShipParameter(ship, ShipKey.KEY_SHIELD,             R.id.defenseFleetShield);
-		getShipParameter(ship, ShipKey.KEY_INITIATIVE,         R.id.defenseFleetInitiative);
-		return ship;
+	private int getIdentifier(String idName) {
+		return getResources().getIdentifier(idName, "id", getPackageName());
 	}
 
 	private void getShipParameter(Bundle ship, String fieldKey, int fieldId) {
@@ -87,5 +75,4 @@ public class DataEntryActivity extends Activity {
 		}
 		ship.putInt(fieldKey, intVal);
 	}
-
 }
