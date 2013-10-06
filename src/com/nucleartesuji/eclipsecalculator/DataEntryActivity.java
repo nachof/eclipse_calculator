@@ -5,8 +5,12 @@ import android.app.Activity;
 import android.content.Intent;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.EditText;
 
 public class DataEntryActivity extends Activity {
+
+	public static final String EXTRA_ATTACKER_SHIP = "com.nucleartesuji.eclipsecalculator.attackerShip";
+	public static final String EXTRA_DEFENDER_SHIP = "com.nucleartesuji.eclipsecalculator.defenderShip";
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -33,12 +37,55 @@ public class DataEntryActivity extends Activity {
 	}
 
 	private void doCalculateAction() {
-		// TODO Auto-generated method stub
 		Intent intent = new Intent(this, ResultsActivity.class);
-		//EditText editText = (EditText) findViewById(R.id.edit_message);
-		//String message = editText.getText().toString();
-		//intent.putExtra(EXTRA_MESSAGE, message);
+		
+		intent.putExtra(EXTRA_ATTACKER_SHIP, attackerShipBundle());
+		intent.putExtra(EXTRA_DEFENDER_SHIP, defenderShipBundle());
 		startActivity(intent);
+	}
+
+	private Bundle attackerShipBundle() {
+		Bundle ship = new Bundle();
+		
+		getShipParameter(ship, ShipKey.KEY_SHIP_COUNT,         R.id.attackFleetShipCount);
+		getShipParameter(ship, ShipKey.KEY_HULL,               R.id.attackFleetHull);
+		getShipParameter(ship, ShipKey.KEY_ION_CANNONS,        R.id.attackFleetIonCannons);
+		getShipParameter(ship, ShipKey.KEY_PLASMA_CANNONS,     R.id.attackFleetPlasmaCannons);
+		getShipParameter(ship, ShipKey.KEY_PLASMA_MISSILES,    R.id.attackFleetPlasmaMissiles);
+		getShipParameter(ship, ShipKey.KEY_ANTIMATTER_CANNONS, R.id.attackFleetAntimatterCannons);
+		getShipParameter(ship, ShipKey.KEY_COMPUTER,           R.id.attackFleetComputer);
+		getShipParameter(ship, ShipKey.KEY_SHIELD,             R.id.attackFleetShield);
+		getShipParameter(ship, ShipKey.KEY_INITIATIVE,         R.id.attackFleetInitiative);
+		return ship;
+	}
+
+	private Bundle defenderShipBundle() {
+		Bundle ship = new Bundle();
+		
+		getShipParameter(ship, ShipKey.KEY_SHIP_COUNT,         R.id.defenseFleetShipCount);
+		getShipParameter(ship, ShipKey.KEY_HULL,               R.id.defenseFleetHull);
+		getShipParameter(ship, ShipKey.KEY_ION_CANNONS,        R.id.defenseFleetIonCannons);
+		getShipParameter(ship, ShipKey.KEY_PLASMA_CANNONS,     R.id.defenseFleetPlasmaCannons);
+		getShipParameter(ship, ShipKey.KEY_PLASMA_MISSILES,    R.id.defenseFleetPlasmaMissiles);
+		getShipParameter(ship, ShipKey.KEY_ANTIMATTER_CANNONS, R.id.defenseFleetAntimatterCannons);
+		getShipParameter(ship, ShipKey.KEY_COMPUTER,           R.id.defenseFleetComputer);
+		getShipParameter(ship, ShipKey.KEY_SHIELD,             R.id.defenseFleetShield);
+		getShipParameter(ship, ShipKey.KEY_INITIATIVE,         R.id.defenseFleetInitiative);
+		return ship;
+	}
+
+	private void getShipParameter(Bundle ship, String fieldKey, int fieldId) {
+		EditText textField = (EditText) findViewById(fieldId );
+		String value = textField.getText().toString();
+		int intVal;
+		
+		try {
+			if (value.equals("")) intVal = 0;
+			else intVal = Integer.parseInt(value);
+		} catch (NumberFormatException e) {
+			intVal = 0;
+		}
+		ship.putInt(fieldKey, intVal);
 	}
 
 }

@@ -27,16 +27,35 @@ public class ResultsActivity extends Activity {
 		setupActionBar();
 		
 		
-		// FIXME get the real data!
-		attacker = new FleetSpec(ShipSpec.Presets.defaultCruiser());
-		defender = new FleetSpec(ShipSpec.Presets.ancient());
-		simulation = new Simulation(attacker, defender);
-		
-
-		runSimulation();
+		loadData();
 		
 		showFleetDescription();
 
+		runSimulation();
+
+	}
+
+	private void loadData() {
+		attacker = loadFleetSpec(DataEntryActivity.EXTRA_ATTACKER_SHIP);
+		defender = loadFleetSpec(DataEntryActivity.EXTRA_DEFENDER_SHIP);
+		
+		simulation = new Simulation(attacker, defender);
+	}
+
+	private FleetSpec loadFleetSpec(String fleetKey) {
+		Bundle fleetData = getIntent().getBundleExtra(fleetKey); 
+		
+		ShipSpec shipSpec = ShipSpec.builder()
+							.setHull(fleetData.getInt(ShipKey.KEY_HULL))
+							.setIonCannons(fleetData.getInt(ShipKey.KEY_ION_CANNONS))
+							.setPlasmaCannons(fleetData.getInt(ShipKey.KEY_PLASMA_CANNONS))
+							.setPlasmaMissiles(fleetData.getInt(ShipKey.KEY_PLASMA_MISSILES))
+							.setAntimatterCannons(fleetData.getInt(ShipKey.KEY_ANTIMATTER_CANNONS))
+							.setComputer(fleetData.getInt(ShipKey.KEY_COMPUTER))
+							.setShield(fleetData.getInt(ShipKey.KEY_SHIELD))
+							.setInitiative(fleetData.getInt(ShipKey.KEY_INITIATIVE))
+							.build();
+		return new FleetSpec(shipSpec, fleetData.getInt(ShipKey.KEY_SHIP_COUNT));
 	}
 
 	private void showFleetDescription() {

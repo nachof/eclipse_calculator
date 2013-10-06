@@ -86,6 +86,26 @@ public class ShipSpec {
 			this.computer = computer;
 			return this;
 		}
+
+		public Builder setPlasmaCannons(int plasmaCannons) {
+			this.plasmaCannons = plasmaCannons;
+			return this;
+		}
+
+		public Builder setPlasmaMissiles(int plasmaMissiles) {
+			this.plasmaMissiles = plasmaMissiles;
+			return this;
+		}
+
+		public Builder setAntimatterCannons(int antimatterCannons) {
+			this.antimatterCannons = antimatterCannons;
+			return this;
+		}
+
+		public Builder setShield(int shield) {
+			this.shield = shield;
+			return this;
+		}
 	}
 
 	public static Builder builder() {
