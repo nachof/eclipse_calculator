@@ -2,6 +2,7 @@ package com.nucleartesuji.eclipsecalculator;
 
 import android.os.Bundle;
 import android.app.Activity;
+import android.content.Intent;
 import android.view.Menu;
 import android.view.MenuItem;
 
@@ -33,7 +34,11 @@ public class DataEntryActivity extends Activity {
 
 	private void doCalculateAction() {
 		// TODO Auto-generated method stub
-		
+		Intent intent = new Intent(this, ResultsActivity.class);
+		//EditText editText = (EditText) findViewById(R.id.edit_message);
+		//String message = editText.getText().toString();
+		//intent.putExtra(EXTRA_MESSAGE, message);
+		startActivity(intent);
 	}
 
 }

@@ -13,5 +13,9 @@
     <string name="label_antimatter_cannons">Antimatter Cannons</string>
     <string name="label_computer">Computer</string>
     <string name="label_shield">Shield</string>
-    <string name="label_initiative">Initiative</string>    
+    <string name="label_initiative">Initiative</string>
+    <string name="title_activity_results">Battle Odds</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+
 </resources>
