@@ -1,5 +1,7 @@
 package com.nucleartesuji.eclipsecalculator;
 
+import java.text.NumberFormat;
+
 import com.nucleartesuji.eclipsecalculator.calculator.FleetSpec;
 import com.nucleartesuji.eclipsecalculator.calculator.ShipSpec;
 import com.nucleartesuji.eclipsecalculator.calculator.Simulation;
@@ -13,6 +15,10 @@ import android.support.v4.app.NavUtils;
 
 public class ResultsActivity extends Activity {
 
+	private FleetSpec attacker;
+	private FleetSpec defender;
+	private Simulation simulation;
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -20,16 +26,42 @@ public class ResultsActivity extends Activity {
 		// Show the Up button in the action bar.
 		setupActionBar();
 		
-		// FIXME: This is just testing values, to see that it actually works!
-		// FIXME: Seriously, replace this with actually getting the values from the other activity.
-		FleetSpec attacker = new FleetSpec(ShipSpec.Presets.defaultCruiser());
-		FleetSpec defender = new FleetSpec(ShipSpec.Presets.ancient());
-		Simulation simulation = new Simulation(attacker, defender);
 		
+		// FIXME get the real data!
+		attacker = new FleetSpec(ShipSpec.Presets.defaultCruiser());
+		defender = new FleetSpec(ShipSpec.Presets.ancient());
+		simulation = new Simulation(attacker, defender);
+		
+
+		runSimulation();
+		
+		showFleetDescription();
+
+	}
+
+	private void showFleetDescription() {
+		TextView attackerDescriptionArea = (TextView) findViewById(R.id.textAttackerFleetDescription);
+		TextView defenderDescriptionArea = (TextView) findViewById(R.id.textDefenderFleetDescription);
+		attackerDescriptionArea.setText(attacker.toString());
+		defenderDescriptionArea.setText(defender.toString());
+	}
+
+	private void runSimulation() {
 		simulation.run();
+		NumberFormat percentFormat = NumberFormat.getPercentInstance();
+		percentFormat.setMinimumFractionDigits(2);
+		percentFormat.setMaximumFractionDigits(2);
 		
-		TextView resultsArea = (TextView) findViewById(R.id.textResults);
-		resultsArea.setText(Double.toString(simulation.attackerWinPercentage()));
+		setFieldValue(R.id.textResultsAttackerWinsPercent, percentFormat.format(simulation.attackerWinRatio()));
+		setFieldValue(R.id.textResultsDefenderWinsPercent, percentFormat.format(simulation.defenderWinRatio()));
+		setFieldValue(R.id.textResultsAttackerWins,        Integer.toString(simulation.attackerWins()));
+		setFieldValue(R.id.textResultsDefenderWins,        Integer.toString(simulation.defenderWins()));
+		setFieldValue(R.id.textResultsRounds,              Integer.toString(simulation.totalRounds()));
+	}
+
+	private void setFieldValue(int fieldId, String fieldValue) {
+		TextView resultsArea = (TextView) findViewById(fieldId);
+		resultsArea.setText(fieldValue);
 	}
 
 	/**

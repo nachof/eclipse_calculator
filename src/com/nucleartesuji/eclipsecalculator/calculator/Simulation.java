@@ -33,9 +33,27 @@ public class Simulation {
 		attackerWinsRounds = 0;
 	}
 
-	public double attackerWinPercentage() {
+	public double attackerWinRatio() {
 		Log.i("Simulation", "Rounds: " + Integer.toString(doneRounds));
 		Log.i("Simulation", "Won by attacker: " + Integer.toString(attackerWinsRounds));
-		return ((double)attackerWinsRounds / doneRounds) * 100;
-	}	
+		return ((double)attackerWinsRounds / doneRounds);
+	}
+
+	public int attackerWins() {
+		return attackerWinsRounds;
+	}
+
+	public int defenderWins() {
+		return doneRounds - attackerWinsRounds;
+	}
+
+	public double defenderWinRatio() {
+		return ((double)defenderWins() / doneRounds);
+	}
+
+	public int totalRounds() {
+		return doneRounds;
+	}
+	
+	
 }

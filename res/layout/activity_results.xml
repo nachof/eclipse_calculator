@@ -1,17 +1,140 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/pageContainer"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context=".ResultsActivity" >
+    android:layout_height="match_parent" >
 
-    <TextView
-        android:id="@+id/textResults"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/hello_world" />
+        android:orientation="vertical"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        tools:context=".ResultsActivity" >
 
-</RelativeLayout>
+                <TextView
+                    android:id="@+id/textView1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/result_label_attacking_fleet"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                <TextView
+                    android:id="@+id/textAttackerFleetDescription"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/result_placeholder_text"
+                    android:textAppearance="?android:attr/textAppearanceSmall" />
+
+
+                <TextView
+                    android:id="@+id/textView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/result_label_defending_fleet"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+                <TextView
+                    android:id="@+id/textDefenderFleetDescription"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/result_placeholder_text"
+                    android:textAppearance="?android:attr/textAppearanceSmall" />                
+                <TextView
+                    android:id="@+id/textView3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/result_label_simulation_results"
+                    android:textAppearance="?android:attr/textAppearanceMedium" />
+                
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" >
+	                <TextView
+	                    android:id="@+id/labelResultsRounds"
+	                    android:layout_width="wrap_content"
+	                    android:layout_height="wrap_content"
+	                    android:text="@string/result_label_total_rounds"
+	                    android:textAppearance="?android:attr/textAppearanceSmall" />
+	                <TextView
+	                    android:id="@+id/textResultsRounds"
+	                    android:layout_width="wrap_content"
+	                    android:layout_height="wrap_content"
+	                    android:text="@string/result_placeholder_text"
+	                    android:textAppearance="?android:attr/textAppearanceSmall" />                
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" >
+	                <TextView
+	                    android:id="@+id/labelResultsAttackerWins"
+	                    android:layout_width="wrap_content"
+	                    android:layout_height="wrap_content"
+	                    android:text="@string/result_label_attacker_wins"
+	                    android:textAppearance="?android:attr/textAppearanceSmall" />
+	                <TextView
+	                    android:id="@+id/textResultsAttackerWins"
+	                    android:layout_width="wrap_content"
+	                    android:layout_height="wrap_content"
+	                    android:text="@string/result_placeholder_text"
+	                    android:textAppearance="?android:attr/textAppearanceSmall" />
+                
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" >
+	                <TextView
+	                    android:id="@+id/labelResultsAttackerWinsPercent"
+	                    android:layout_width="wrap_content"
+	                    android:layout_height="wrap_content"
+	                    android:text="@string/result_label_attacker_win_percent"
+	                    android:textAppearance="?android:attr/textAppearanceSmall" />
+	                <TextView
+	                    android:id="@+id/textResultsAttackerWinsPercent"
+	                    android:layout_width="wrap_content"
+	                    android:layout_height="wrap_content"
+	                    android:text="@string/result_placeholder_text"
+	                    android:textAppearance="?android:attr/textAppearanceSmall" />
+                
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" >
+	                <TextView
+	                    android:id="@+id/labelResultsDefenderWins"
+	                    android:layout_width="wrap_content"
+	                    android:layout_height="wrap_content"
+	                    android:text="@string/result_label_defender_wins"
+	                    android:textAppearance="?android:attr/textAppearanceSmall" />
+	                <TextView
+	                    android:id="@+id/textResultsDefenderWins"
+	                    android:layout_width="wrap_content"
+	                    android:layout_height="wrap_content"
+	                    android:text="@string/result_placeholder_text"
+	                    android:textAppearance="?android:attr/textAppearanceSmall" />
+                
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" >
+	                <TextView
+	                    android:id="@+id/labelResultsDefenderWinsPercent"
+	                    android:layout_width="wrap_content"
+	                    android:layout_height="wrap_content"
+	                    android:text="@string/result_label_defender_win_percent"
+	                    android:textAppearance="?android:attr/textAppearanceSmall" />
+	                <TextView
+	                    android:id="@+id/textResultsDefenderWinsPercent"
+	                    android:layout_width="wrap_content"
+	                    android:layout_height="wrap_content"
+	                    android:text="@string/result_placeholder_text"
+	                    android:textAppearance="?android:attr/textAppearanceSmall" />
+                
+                </LinearLayout>
+                
+
+    </LinearLayout>
+
+</ScrollView>

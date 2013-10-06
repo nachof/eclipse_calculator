@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    
+    <string name="result_label_attacking_fleet">Attacking fleet</string>
+    <string name="result_label_defending_fleet">Defending fleet</string>
+    <string name="result_placeholder_text">(no content yet)</string>
+    <string name="result_label_simulation_results">Simulation results</string>
+    <string name="result_label_total_rounds">"Total rounds: "</string>
+    <string name="result_label_attacker_wins">"Attacker wins: "</string>
+    <string name="result_label_attacker_win_percent">"Attacker win share: "</string>
+    <string name="result_label_defender_wins">"Defender wins: "</string>
+    <string name="result_label_defender_win_percent">"Defender win share: "</string>
+    
+    
+</resources>

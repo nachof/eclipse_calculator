@@ -11,7 +11,7 @@ public class ShipSpec {
 	private int hull = 0;
     private int ionCannons = 0;
     private int plasmaCannons = 0;
-    private int plasmaMissiles = 0;
+    private int plasmaMissiles = 0; // FIXME: We're not actually using the missiles yet...
     private int antimatterCannons = 0;
     private int computer = 0;
     private int shield = 0;
@@ -111,6 +111,42 @@ public class ShipSpec {
 					.build();
 		}	
 	}
-
 	
+	public static class Presenter {
+		private ShipSpec shipSpec;
+
+		public Presenter(ShipSpec shipSpec) {
+			this.shipSpec = shipSpec;
+			
+		}
+		
+		public String toString() {
+			StringBuilder result = new StringBuilder();
+			List<StringBuilder> parts = new ArrayList<StringBuilder>();
+			
+			if (shipSpec.hull >= 1)              parts.add(new StringBuilder("Hull: ")              .append(shipSpec.hull));
+			if (shipSpec.ionCannons >= 1)        parts.add(new StringBuilder("Ion Cannons: ")       .append(shipSpec.ionCannons));
+			if (shipSpec.plasmaCannons >= 1)     parts.add(new StringBuilder("Plasma Cannons: ")    .append(shipSpec.plasmaCannons));
+			if (shipSpec.plasmaMissiles >= 1)    parts.add(new StringBuilder("Plasma Missiles: ")   .append(shipSpec.plasmaMissiles));
+			if (shipSpec.antimatterCannons >= 1) parts.add(new StringBuilder("Antimatter Cannons: ").append(shipSpec.antimatterCannons));
+			if (shipSpec.computer >= 1)          parts.add(new StringBuilder("Computer: ")          .append(shipSpec.computer));
+			if (shipSpec.shield >= 1)            parts.add(new StringBuilder("Shield: ")            .append(shipSpec.shield));
+			if (shipSpec.initiative >= 1)        parts.add(new StringBuilder("Initiative: ")        .append(shipSpec.initiative));
+			
+			boolean isFirst = true;
+			for(StringBuilder part : parts) {
+				if (!isFirst) {
+					result.append(", ");
+				}
+				result.append(part);
+				isFirst = false;
+			}
+			
+			return result.toString();
+		}
+	}
+	
+	public String toString() {
+		return (new Presenter(this)).toString();
+	}
 }

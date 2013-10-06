@@ -46,4 +46,24 @@ public class FleetSpec {
 	public int initiative() {
 		return shipSpec.initiative();
 	}
+	
+	public String toString() {
+		return (new Presenter(this)).toString();
+	}
+	
+	public static class Presenter {
+		private FleetSpec fleetSpec;
+
+		public Presenter(FleetSpec fleetSpec) {
+			this.fleetSpec = fleetSpec;
+		}
+		
+		public String toString() {
+			StringBuilder result = new StringBuilder();
+			result.append(Integer.toString(fleetSpec.count));
+			result.append(" ship: ");
+			result.append(fleetSpec.shipSpec.toString());
+			return result.toString();
+		}
+	}
 }
