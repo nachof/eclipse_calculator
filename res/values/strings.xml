@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Eclipse Calculator</string>
+    <string name="action_calculate">Calculate Odds</string>
+    <string name="title_first_fleet">Attacking fleet</string>
+    <string name="title_second_fleet">Defending fleet</string>
+    <string name="label_ship_count">Ship Count</string>
+    <string name="label_hull">Hull</string>
+    <string name="label_ion_cannons">Ion Cannons</string>
+    <string name="label_plasma_cannons">Plasma Cannons</string>
+    <string name="label_plasma_missiles">Plasma Missiles</string>
+    <string name="label_antimatter_cannons">Antimatter Cannons</string>
+    <string name="label_computer">Computer</string>
+    <string name="label_shield">Shield</string>
+    <string name="label_initiative">Initiative</string>    
+</resources>
