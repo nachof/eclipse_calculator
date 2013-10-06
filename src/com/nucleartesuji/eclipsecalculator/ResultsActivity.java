@@ -1,9 +1,14 @@
 package com.nucleartesuji.eclipsecalculator;
 
+import com.nucleartesuji.eclipsecalculator.calculator.FleetSpec;
+import com.nucleartesuji.eclipsecalculator.calculator.ShipSpec;
+import com.nucleartesuji.eclipsecalculator.calculator.Simulation;
+
 import android.os.Bundle;
 import android.app.Activity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
 import android.support.v4.app.NavUtils;
 
 public class ResultsActivity extends Activity {
@@ -14,6 +19,17 @@ public class ResultsActivity extends Activity {
 		setContentView(R.layout.activity_results);
 		// Show the Up button in the action bar.
 		setupActionBar();
+		
+		// FIXME: This is just testing values, to see that it actually works!
+		// FIXME: Seriously, replace this with actually getting the values from the other activity.
+		FleetSpec attacker = new FleetSpec(ShipSpec.Presets.defaultCruiser());
+		FleetSpec defender = new FleetSpec(ShipSpec.Presets.ancient());
+		Simulation simulation = new Simulation(attacker, defender);
+		
+		simulation.run();
+		
+		TextView resultsArea = (TextView) findViewById(R.id.textResults);
+		resultsArea.setText(Double.toString(simulation.attackerWinPercentage()));
 	}
 
 	/**
