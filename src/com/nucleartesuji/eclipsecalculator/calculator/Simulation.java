@@ -1,7 +1,5 @@
 package com.nucleartesuji.eclipsecalculator.calculator;
 
-import android.util.Log;
-
 public class Simulation {
 	private static final int DEFAULT_FIGHT_ROUNDS = 1000;
 	private int doneRounds = 0;
@@ -34,8 +32,6 @@ public class Simulation {
 	}
 
 	public double attackerWinRatio() {
-		Log.i("Simulation", "Rounds: " + Integer.toString(doneRounds));
-		Log.i("Simulation", "Won by attacker: " + Integer.toString(attackerWinsRounds));
 		return ((double)attackerWinsRounds / doneRounds);
 	}
 
@@ -54,6 +50,4 @@ public class Simulation {
 	public int totalRounds() {
 		return doneRounds;
 	}
-	
-	
 }

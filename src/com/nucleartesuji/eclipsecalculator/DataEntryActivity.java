@@ -16,6 +16,26 @@ public class DataEntryActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_data_entry);
+		setDefaultValues("attack");
+		setDefaultValues("defense");
+	}
+
+	private void setDefaultValues(String shipPrefix) {		
+		setFieldValue(getIdentifier(shipPrefix + "FleetShipCount"), 1);
+		setFieldValue(getIdentifier(shipPrefix + "FleetHull"), 1);
+		setFieldValue(getIdentifier(shipPrefix + "FleetIonCannons"), 2);
+		setFieldValue(getIdentifier(shipPrefix + "FleetPlasmaCannons"), 0);
+		setFieldValue(getIdentifier(shipPrefix + "FleetPlasmaMissiles"), 0);
+		setFieldValue(getIdentifier(shipPrefix + "FleetAntimatterCannons"), 0);
+		setFieldValue(getIdentifier(shipPrefix + "FleetComputer"), 1);
+		setFieldValue(getIdentifier(shipPrefix + "FleetShield"), 0);		
+		setFieldValue(getIdentifier(shipPrefix + "FleetInitiative"), 2);
+
+	}
+
+	private void setFieldValue(int id, int value) {
+		EditText editText = (EditText) findViewById(id);
+		editText.setText(Integer.toString(value));
 	}
 
 	@Override
