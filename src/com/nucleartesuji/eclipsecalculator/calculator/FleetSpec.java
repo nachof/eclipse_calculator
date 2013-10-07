@@ -26,6 +26,12 @@ public class FleetSpec {
 		}
 	}
 
+	public void fireMissilesAt(FleetSpec otherFleet) {
+		for (int i = 0; i < aliveCount(); i++) {
+			otherFleet.takeDamage(shipSpec.missileDice());
+		}		
+	}
+
 	private void takeDamage(List<AttackDie> attackDice) {
 		for(AttackDie die : attackDice) {
 			this.damage += die.damageAgainst(shipSpec);
@@ -66,4 +72,5 @@ public class FleetSpec {
 			return result.toString();
 		}
 	}
+
 }

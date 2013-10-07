@@ -7,11 +7,12 @@ public class ShipSpec {
     private static final int ION_CANNON_HITS = 1;
 	private static final int PLASMA_CANNON_HITS = 2;
 	private static final int ANTIMATTER_CANNON_HITS = 4;
+	private static final int PLASMA_MISSILE_HITS = 2;
 	
 	private int hull = 0;
     private int ionCannons = 0;
     private int plasmaCannons = 0;
-    private int plasmaMissiles = 0; // FIXME: We're not actually using the missiles yet...
+    private int plasmaMissiles = 0; 
     private int antimatterCannons = 0;
     private int computer = 0;
     private int shield = 0;
@@ -42,6 +43,12 @@ public class ShipSpec {
 		for (int i = 0; i < plasmaCannons; i++) dice.add(new AttackDie(PLASMA_CANNON_HITS, computer));
 		for (int i = 0; i < antimatterCannons; i++) dice.add(new AttackDie(ANTIMATTER_CANNON_HITS, computer));
 		
+		return dice;
+	}
+
+	public List<AttackDie> missileDice() {
+		List<AttackDie> dice = new ArrayList<AttackDie>();
+		for (int i = 0; i < plasmaMissiles * 2; i++) dice.add(new AttackDie(PLASMA_MISSILE_HITS, computer));
 		return dice;
 	}
 
@@ -169,4 +176,5 @@ public class ShipSpec {
 	public String toString() {
 		return (new Presenter(this)).toString();
 	}
+
 }

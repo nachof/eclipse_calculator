@@ -13,6 +13,9 @@ public class Battle {
 		attacker.resetDamage();
 		defender.resetDamage();
 		
+		firstFleet().fireMissilesAt(secondFleet());
+		secondFleet().fireMissilesAt(firstFleet());
+		
 		while(attacker.alive() && defender.alive()) {
 			firstFleet().fireAt(secondFleet());
 			secondFleet().fireAt(firstFleet());
