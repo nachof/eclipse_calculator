@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Calculadora de Eclipse</string>
+    <string name="action_calculate">Calcular probabilidades</string>
+    <string name="title_first_fleet">Flota atacante</string>
+    <string name="title_second_fleet">Flota defensora</string>
+    <string name="label_ship_count">Cantidad de naves</string>
+    <string name="label_hull">Hull</string>
+    <string name="label_ion_cannons">Cañones de iones</string>
+    <string name="label_plasma_cannons">Cañones de plasma</string>
+    <string name="label_plasma_missiles">Misiles de plasma</string>
+    <string name="label_antimatter_cannons">Cañones de antimateria</string>
+    <string name="label_computer">Computadora</string>
+    <string name="label_shield">Escudo</string>
+    <string name="label_initiative">Iniciativa</string>
+    <string name="title_activity_results">Probabilidades de combate</string>    
+</resources>

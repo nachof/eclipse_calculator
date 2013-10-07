@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    
+    <string name="result_label_attacking_fleet">Flota atacante</string>
+    <string name="result_label_defending_fleet">Flota defensora</string>
+    <string name="result_placeholder_text">(sin contenido aún)</string>
+    <string name="result_label_simulation_results">Resultados de la simulación</string>
+    <string name="result_label_total_rounds">&quot;Rondas totales: &quot;</string>
+    <string name="result_label_attacker_wins">&quot;Atacante gana: &quot;</string>
+    <string name="result_label_attacker_win_percent">&quot;Atacante gana (porcentaje): &quot;</string>
+    <string name="result_label_defender_wins">&quot;Defensor gana: &quot;</string>
+    <string name="result_label_defender_win_percent">&quot;Defensor gana (porcentaje): &quot;</string>
+    <string name="menu_re_run_simulation">Reintentar simulación</string>
+    <string name="menu_simulate_more">Simular más</string>
+    
+    
+</resources>
