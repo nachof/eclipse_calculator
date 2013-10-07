@@ -3,7 +3,7 @@ package com.nucleartesuji.eclipsecalculator.calculator;
 import android.util.Log;
 
 public class Simulation {
-	private static final int DEFAULT_FIGHT_ROUNDS = 4000;
+	private static final int DEFAULT_FIGHT_ROUNDS = 1000;
 	private int doneRounds = 0;
 	private int attackerWinsRounds = 0;
 	private FleetSpec attackerFleet;

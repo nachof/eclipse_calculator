@@ -10,6 +10,8 @@
     <string name="result_label_attacker_win_percent">"Attacker win share: "</string>
     <string name="result_label_defender_wins">"Defender wins: "</string>
     <string name="result_label_defender_win_percent">"Defender win share: "</string>
+    <string name="menu_re_run_simulation">Re-run simulation</string>
+    <string name="menu_simulate_more">Simulate more</string>
     
     
 </resources>
