@@ -16,7 +16,7 @@ public class Battle {
 		firstFleet().fireMissilesAt(secondFleet());
 		secondFleet().fireMissilesAt(firstFleet());
 		
-		while(attacker.alive() && defender.alive()) {
+		while(attacker.alive() && defender.alive() && attacker.hasNonMissileFirePower()) {
 			firstFleet().fireAt(secondFleet());
 			secondFleet().fireAt(firstFleet());
 		}

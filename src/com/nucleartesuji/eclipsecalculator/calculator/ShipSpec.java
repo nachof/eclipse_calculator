@@ -59,8 +59,16 @@ public class ShipSpec {
 	public int initiative() {
 		return initiative;
 	}
+
+    public boolean hasNonMissileFirePower() {
+        return (totalCannons() > 0);
+    }
 	
-	public static class Builder {
+	private int totalCannons() {
+	    return ionCannons + plasmaCannons + antimatterCannons;
+    }
+
+    public static class Builder {
 		private int hull = 0;
 	    private int ionCannons = 0;
 	    private int plasmaCannons = 0;

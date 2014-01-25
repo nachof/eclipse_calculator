@@ -56,6 +56,11 @@ public class FleetSpec {
 	public String toString() {
 		return (new Presenter(this)).toString();
 	}
+
+	public boolean hasNonMissileFirePower() {
+	    return shipSpec.hasNonMissileFirePower();
+    }
+
 	
 	public static class Presenter {
 		private FleetSpec fleetSpec;
