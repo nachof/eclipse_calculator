@@ -3,9 +3,15 @@ package com.nucleartesuji.eclipsecalculator;
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
+import android.view.HapticFeedbackConstants;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.view.ViewGroup;
 import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.Toast;
 
 public class DataEntryActivity extends Activity {
 
@@ -18,6 +24,32 @@ public class DataEntryActivity extends Activity {
         setContentView(R.layout.activity_data_entry);
         setDefaultValues("attack");
         setDefaultValues("defense");
+        prepareOnLongClickListenerForImages();
+    }
+
+    private void prepareOnLongClickListenerForImages() {
+        LinearLayout containerView = (LinearLayout) findViewById(R.id.dataEntryOuterContainer);
+        prepareOnLongClickListenerForImagesUnderContainer(containerView);
+    }
+
+    private void prepareOnLongClickListenerForImagesUnderContainer(
+            ViewGroup containerView) {
+        int childCount = containerView.getChildCount();
+        for (int i = 0; i < childCount; i++) {
+            View view = containerView.getChildAt(i);
+            if (view instanceof ViewGroup) {
+                prepareOnLongClickListenerForImagesUnderContainer((ViewGroup) view);
+            } else if (view instanceof ImageView) {
+                view.setOnLongClickListener(new View.OnLongClickListener() {
+                    @Override
+                    public boolean onLongClick(View view) {
+                        Toast.makeText(getApplicationContext(), view.getContentDescription(), Toast.LENGTH_SHORT).show();
+                        view.performHapticFeedback(HapticFeedbackConstants.LONG_PRESS);
+                        return false;
+                    }
+                });
+            }
+        }
     }
 
     private void setDefaultValues(String shipPrefix) {
