@@ -33,6 +33,17 @@ public class DataEntryActivity extends Activity {
         prepareOnLongClickListenerForImagesUnderContainer(containerView);
     }
 
+    private final View.OnLongClickListener longClickFeedbackListener = new View.OnLongClickListener() {
+        @Override
+        public boolean onLongClick(View view) {
+            Toast toast = Toast.makeText(getApplicationContext(), view.getContentDescription(), Toast.LENGTH_SHORT);
+            toast.setGravity(Gravity.TOP, 0, 0);
+            toast.show();
+            view.performHapticFeedback(HapticFeedbackConstants.LONG_PRESS);
+            return false;
+        }
+    };
+
     private void prepareOnLongClickListenerForImagesUnderContainer(
             ViewGroup containerView) {
         int childCount = containerView.getChildCount();
@@ -41,16 +52,7 @@ public class DataEntryActivity extends Activity {
             if (view instanceof ViewGroup) {
                 prepareOnLongClickListenerForImagesUnderContainer((ViewGroup) view);
             } else if (view instanceof ImageView) {
-                view.setOnLongClickListener(new View.OnLongClickListener() {
-                    @Override
-                    public boolean onLongClick(View view) {
-                        Toast toast = Toast.makeText(getApplicationContext(), view.getContentDescription(), Toast.LENGTH_SHORT);
-                        toast.setGravity(Gravity.TOP, 0, 0);
-                        toast.show();
-                        view.performHapticFeedback(HapticFeedbackConstants.LONG_PRESS);
-                        return false;
-                    }
-                });
+                view.setOnLongClickListener(longClickFeedbackListener);
             }
         }
     }
