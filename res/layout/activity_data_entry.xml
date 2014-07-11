@@ -34,13 +34,13 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" >
 
-                <TextView
-                    android:id="@+id/attackFleetShipCountLabel"
-                    android:layout_width="0dp"
+                <ImageView
+                    android:id="@+id/imageView1"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="2"
-                    android:text="@string/label_ship_count"
-                    android:textAppearance="?android:attr/textAppearanceMedium" />
+                    android:contentDescription="@string/label_ship_count"
+                    android:longClickable="true"
+                    android:src="@drawable/ships" />
 
                 <EditText
                     android:id="@+id/attackFleetShipCount"
@@ -212,13 +212,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" >
 
-                <TextView
-                    android:id="@+id/attackFleetInitiativeLabel"
-                    android:layout_width="0dp"
+                <ImageView
+                    android:id="@+id/imageView8"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="2"
-                    android:text="@string/label_initiative"
-                    android:textAppearance="?android:attr/textAppearanceMedium" />
+                    android:contentDescription="@string/label_initiative"
+                    android:src="@drawable/tile_initiative" />
 
                 <EditText
                     android:id="@+id/attackFleetInitiative"
@@ -257,13 +256,13 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" >
 
-                <TextView
-                    android:id="@+id/defenseFleetShipCountLabel"
-                    android:layout_width="0dp"
+                <ImageView
+                    android:id="@+id/imageView1"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="2"
-                    android:text="@string/label_ship_count"
-                    android:textAppearance="?android:attr/textAppearanceMedium" />
+                    android:contentDescription="@string/label_ship_count"
+                    android:longClickable="true"
+                    android:src="@drawable/ships" />
 
                 <EditText
                     android:id="@+id/defenseFleetShipCount"
@@ -434,13 +433,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" >
 
-                <TextView
-                    android:id="@+id/defenseFleetInitiativeLabel"
-                    android:layout_width="0dp"
+                <ImageView
+                    android:id="@+id/imageView08"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="2"
-                    android:text="@string/label_initiative"
-                    android:textAppearance="?android:attr/textAppearanceMedium" />
+                    android:contentDescription="@string/label_initiative"
+                    android:src="@drawable/tile_initiative" />
 
                 <EditText
                     android:id="@+id/defenseFleetInitiative"
