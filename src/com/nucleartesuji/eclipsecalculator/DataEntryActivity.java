@@ -3,6 +3,7 @@ package com.nucleartesuji.eclipsecalculator;
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
+import android.view.Gravity;
 import android.view.HapticFeedbackConstants;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -43,7 +44,9 @@ public class DataEntryActivity extends Activity {
                 view.setOnLongClickListener(new View.OnLongClickListener() {
                     @Override
                     public boolean onLongClick(View view) {
-                        Toast.makeText(getApplicationContext(), view.getContentDescription(), Toast.LENGTH_SHORT).show();
+                        Toast toast = Toast.makeText(getApplicationContext(), view.getContentDescription(), Toast.LENGTH_SHORT);
+                        toast.setGravity(Gravity.TOP, 0, 0);
+                        toast.show();
                         view.performHapticFeedback(HapticFeedbackConstants.LONG_PRESS);
                         return false;
                     }
