@@ -35,7 +35,7 @@
                 android:layout_height="wrap_content" >
 
                 <ImageView
-                    android:id="@+id/imageView1"
+                    android:id="@+id/attackFleetShipCountLabel"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:contentDescription="@string/label_ship_count"
@@ -58,7 +58,7 @@
                 android:layout_height="wrap_content" >
 
                 <ImageView
-                    android:id="@+id/imageView1"
+                    android:id="@+id/attackFleetHullLabel"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:contentDescription="@string/label_hull"
@@ -81,7 +81,7 @@
                 android:layout_height="wrap_content" >
 
                 <ImageView
-                    android:id="@+id/imageView2"
+                    android:id="@+id/attackFleetIonCannonsLabel"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:contentDescription="@string/label_ion_cannons"
@@ -103,7 +103,7 @@
                 android:layout_height="wrap_content" >
 
                 <ImageView
-                    android:id="@+id/imageView3"
+                    android:id="@+id/attackFleetPlasmaCannonsLabel"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:contentDescription="@string/label_plasma_cannons"
@@ -125,7 +125,7 @@
                 android:layout_height="wrap_content" >
 
                 <ImageView
-                    android:id="@+id/imageView4"
+                    android:id="@+id/attackFleetPlasmaMissilesLabel"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:contentDescription="@string/label_plasma_missiles"
@@ -147,7 +147,7 @@
                 android:layout_height="wrap_content" >
 
                 <ImageView
-                    android:id="@+id/imageView5"
+                    android:id="@+id/attackFleetAntimatterCannonsLabel"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:contentDescription="@string/label_antimatter_cannons"
@@ -169,7 +169,7 @@
                 android:layout_height="wrap_content" >
 
                 <ImageView
-                    android:id="@+id/imageView6"
+                    android:id="@+id/attackFleetComputerLabel"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:contentDescription="@string/label_computer"
@@ -191,7 +191,7 @@
                 android:layout_height="wrap_content" >
 
                 <ImageView
-                    android:id="@+id/imageView7"
+                    android:id="@+id/attackFleetShieldLabel"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:contentDescription="@string/label_shield"
@@ -213,7 +213,7 @@
                 android:layout_height="wrap_content" >
 
                 <ImageView
-                    android:id="@+id/imageView8"
+                    android:id="@+id/attackFleetInitiativeLabel"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:contentDescription="@string/label_initiative"
@@ -269,7 +269,7 @@
                 </EditText>
 
                 <ImageView
-                    android:id="@+id/imageView11"
+                    android:id="@+id/defenseFleetShipCountLabel"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:contentDescription="@string/label_ship_count"
@@ -295,7 +295,7 @@
                 </EditText>
 
                 <ImageView
-                    android:id="@+id/ImageView01"
+                    android:id="@+id/defenseFleetHullLabel"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:contentDescription="@string/label_hull"
@@ -320,7 +320,7 @@
                 </EditText>
 
                 <ImageView
-                    android:id="@+id/ImageView02"
+                    android:id="@+id/defenseFleetIonCannonsLabel"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:contentDescription="@string/label_ion_cannons"
@@ -345,7 +345,7 @@
                 </EditText>
 
                 <ImageView
-                    android:id="@+id/ImageView03"
+                    android:id="@+id/defenseFleetPlasmaCannonsLabel"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:contentDescription="@string/label_plasma_cannons"
@@ -370,7 +370,7 @@
                 </EditText>
 
                 <ImageView
-                    android:id="@+id/ImageView04"
+                    android:id="@+id/defenseFleetPlasmaMissilesLabel"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:contentDescription="@string/label_plasma_missiles"
@@ -395,7 +395,7 @@
                 </EditText>
 
                 <ImageView
-                    android:id="@+id/ImageView05"
+                    android:id="@+id/defenseFleetAntimatterCannonsLabel"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:contentDescription="@string/label_antimatter_cannons"
@@ -420,7 +420,7 @@
                 </EditText>
 
                 <ImageView
-                    android:id="@+id/ImageView06"
+                    android:id="@+id/defenseFleetComputerLabel"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:contentDescription="@string/label_computer"
@@ -445,7 +445,7 @@
                 </EditText>
 
                 <ImageView
-                    android:id="@+id/ImageView07"
+                    android:id="@+id/defenseFleetShieldLabel"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:contentDescription="@string/label_shield"
@@ -470,7 +470,7 @@
                 </EditText>
 
                 <ImageView
-                    android:id="@+id/imageView08"
+                    android:id="@+id/defenseFleetInitiativeLabel"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:contentDescription="@string/label_initiative"
