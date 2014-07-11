@@ -248,6 +248,7 @@
                 android:id="@+id/labelDefendingFleet"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:gravity="right"
                 android:text="@string/title_second_fleet"
                 android:textAppearance="?android:attr/textAppearanceLarge" />
 
@@ -255,6 +256,17 @@
                 android:id="@+id/defenseFleetShipCountContainer"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" >
+
+                <EditText
+                    android:id="@+id/defenseFleetShipCount"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ems="10"
+                    android:gravity="right|center_vertical"
+                    android:inputType="number" >
+
+                </EditText>
 
                 <ImageView
                     android:id="@+id/imageView11"
@@ -264,20 +276,23 @@
                     android:longClickable="true"
                     android:src="@drawable/ships" />
 
-                <EditText
-                    android:id="@+id/defenseFleetShipCount"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:ems="10"
-                    android:inputType="number" >
-                </EditText>
             </LinearLayout>
 
             <LinearLayout
                 android:id="@+id/defenseFleetHullContainer"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" >
+
+                <EditText
+                    android:id="@+id/defenseFleetHull"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ems="10"
+                    android:gravity="right|center_vertical"
+                    android:inputType="number" >
+
+                </EditText>
 
                 <ImageView
                     android:id="@+id/ImageView01"
@@ -286,20 +301,23 @@
                     android:contentDescription="@string/label_hull"
                     android:src="@drawable/tile_hull" />
 
-                <EditText
-                    android:id="@+id/defenseFleetHull"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:ems="10"
-                    android:inputType="number" >
-                </EditText>
             </LinearLayout>
 
             <LinearLayout
                 android:id="@+id/defenseFleetIonCannonsContainer"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" >
+
+                <EditText
+                    android:id="@+id/defenseFleetIonCannons"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ems="10"
+                    android:gravity="right|center_vertical"
+                    android:inputType="number" >
+
+                </EditText>
 
                 <ImageView
                     android:id="@+id/ImageView02"
@@ -308,20 +326,23 @@
                     android:contentDescription="@string/label_ion_cannons"
                     android:src="@drawable/tile_ion_cannon" />
 
-                <EditText
-                    android:id="@+id/defenseFleetIonCannons"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:ems="10"
-                    android:inputType="number" >
-                </EditText>
             </LinearLayout>
 
             <LinearLayout
                 android:id="@+id/defenseFleetPlasmaCannonsContainer"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" >
+
+                <EditText
+                    android:id="@+id/defenseFleetPlasmaCannons"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ems="10"
+                    android:gravity="right|center_vertical"
+                    android:inputType="number" >
+
+                </EditText>
 
                 <ImageView
                     android:id="@+id/ImageView03"
@@ -330,20 +351,23 @@
                     android:contentDescription="@string/label_plasma_cannons"
                     android:src="@drawable/tile_plasma_cannon" />
 
-                <EditText
-                    android:id="@+id/defenseFleetPlasmaCannons"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:ems="10"
-                    android:inputType="number" >
-                </EditText>
             </LinearLayout>
 
             <LinearLayout
                 android:id="@+id/defenseFleetPlasmaMissilesContainer"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" >
+
+                <EditText
+                    android:id="@+id/defenseFleetPlasmaMissiles"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ems="10"
+                    android:gravity="right|center_vertical"
+                    android:inputType="number" >
+
+                </EditText>
 
                 <ImageView
                     android:id="@+id/ImageView04"
@@ -352,20 +376,23 @@
                     android:contentDescription="@string/label_plasma_missiles"
                     android:src="@drawable/tile_plasma_missiles" />
 
-                <EditText
-                    android:id="@+id/defenseFleetPlasmaMissiles"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:ems="10"
-                    android:inputType="number" >
-                </EditText>
             </LinearLayout>
 
             <LinearLayout
                 android:id="@+id/defenseFleetAntimatterCannonsContainer"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" >
+
+                <EditText
+                    android:id="@+id/defenseFleetAntimatterCannons"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ems="10"
+                    android:gravity="right|center_vertical"
+                    android:inputType="number" >
+
+                </EditText>
 
                 <ImageView
                     android:id="@+id/ImageView05"
@@ -374,20 +401,23 @@
                     android:contentDescription="@string/label_antimatter_cannons"
                     android:src="@drawable/tile_antimatter_cannon" />
 
-                <EditText
-                    android:id="@+id/defenseFleetAntimatterCannons"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:ems="10"
-                    android:inputType="number" >
-                </EditText>
             </LinearLayout>
 
             <LinearLayout
                 android:id="@+id/defenseFleetComputerContainer"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" >
+
+                <EditText
+                    android:id="@+id/defenseFleetComputer"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ems="10"
+                    android:gravity="right|center_vertical"
+                    android:inputType="number" >
+
+                </EditText>
 
                 <ImageView
                     android:id="@+id/ImageView06"
@@ -396,20 +426,23 @@
                     android:contentDescription="@string/label_computer"
                     android:src="@drawable/tile_electron_computer" />
 
-                <EditText
-                    android:id="@+id/defenseFleetComputer"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:ems="10"
-                    android:inputType="number" >
-                </EditText>
             </LinearLayout>
 
             <LinearLayout
                 android:id="@+id/defenseFleetShieldContainer"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" >
+
+                <EditText
+                    android:id="@+id/defenseFleetShield"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ems="10"
+                    android:gravity="right|center_vertical"
+                    android:inputType="number" >
+
+                </EditText>
 
                 <ImageView
                     android:id="@+id/ImageView07"
@@ -418,20 +451,23 @@
                     android:contentDescription="@string/label_shield"
                     android:src="@drawable/tile_gauss_shield" />
 
-                <EditText
-                    android:id="@+id/defenseFleetShield"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:ems="10"
-                    android:inputType="number" >
-                </EditText>
             </LinearLayout>
 
             <LinearLayout
                 android:id="@+id/defenseFleetInitiativeContainer"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" >
+
+                <EditText
+                    android:id="@+id/defenseFleetInitiative"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ems="10"
+                    android:gravity="right|center_vertical"
+                    android:inputType="number" >
+
+                </EditText>
 
                 <ImageView
                     android:id="@+id/imageView08"
@@ -440,14 +476,6 @@
                     android:contentDescription="@string/label_initiative"
                     android:src="@drawable/tile_initiative" />
 
-                <EditText
-                    android:id="@+id/defenseFleetInitiative"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:ems="10"
-                    android:inputType="number" >
-                </EditText>
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>
