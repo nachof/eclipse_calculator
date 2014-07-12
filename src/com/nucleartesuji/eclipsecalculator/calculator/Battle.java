@@ -1,37 +1,41 @@
 package com.nucleartesuji.eclipsecalculator.calculator;
 
 public class Battle {
-	private FleetSpec attacker;
-	private FleetSpec defender;
-	
-	public Battle(FleetSpec attacker, FleetSpec defender) {
-		this.attacker = attacker;
-		this.defender = defender;
-	}
-	
-	public BattleResult fight() {
-		attacker.resetDamage();
-		defender.resetDamage();
-		
-		firstFleet().fireMissilesAt(secondFleet());
-		secondFleet().fireMissilesAt(firstFleet());
-		
-		while(attacker.alive() && defender.alive() && attacker.hasNonMissileFirePower()) {
-			firstFleet().fireAt(secondFleet());
-			secondFleet().fireAt(firstFleet());
-		}
-		
-		return defender.alive() ? BattleResult.defenderWins() : BattleResult.attackerWins(); 
-	}
+    private FleetSpec attacker;
+    private FleetSpec defender;
 
-	
-	// When resolving combat order, if initiative is the same, then defender goes first.
-	private FleetSpec secondFleet() {
-		return (attacker.initiative() > defender.initiative()) ? defender : attacker;
-	}
+    public Battle(FleetSpec attacker, FleetSpec defender) {
+        this.attacker = attacker;
+        this.defender = defender;
+    }
 
-	private FleetSpec firstFleet() {
-		return (attacker.initiative() > defender.initiative()) ? attacker : defender;	
-	}
+    public BattleResult fight() {
+        attacker.resetDamage();
+        defender.resetDamage();
+
+        firstFleet().fireMissilesAt(secondFleet());
+        secondFleet().fireMissilesAt(firstFleet());
+
+        while (attacker.alive() && defender.alive()
+                && attacker.hasNonMissileFirePower()) {
+            firstFleet().fireAt(secondFleet());
+            secondFleet().fireAt(firstFleet());
+        }
+
+        return defender.alive() ? BattleResult.defenderWins() : BattleResult
+                .attackerWins();
+    }
+
+    // When resolving combat order, if initiative is the same, then defender
+    // goes first.
+    private FleetSpec secondFleet() {
+        return (attacker.initiative() > defender.initiative()) ? defender
+                : attacker;
+    }
+
+    private FleetSpec firstFleet() {
+        return (attacker.initiative() > defender.initiative()) ? attacker
+                : defender;
+    }
 
 }
