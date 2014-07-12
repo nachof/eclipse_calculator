@@ -36,8 +36,10 @@ public class DataEntryActivity extends Activity {
     private final View.OnLongClickListener longClickFeedbackListener = new View.OnLongClickListener() {
         @Override
         public boolean onLongClick(View view) {
+            int[] location = {0, 0};
+            view.getLocationOnScreen(location);
             Toast toast = Toast.makeText(getApplicationContext(), view.getContentDescription(), Toast.LENGTH_SHORT);
-            toast.setGravity(Gravity.TOP, 0, 0);
+            toast.setGravity(Gravity.TOP, 0, location[1] - 5);
             toast.show();
             view.performHapticFeedback(HapticFeedbackConstants.LONG_PRESS);
             return false;
