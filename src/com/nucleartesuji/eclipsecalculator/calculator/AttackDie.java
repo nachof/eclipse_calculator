@@ -15,7 +15,7 @@ public class AttackDie {
 
     public int damageAgainst(ShipSpec shipSpec) {
         int roll = (int) Math.floor(Math.random() * 6) + 1;
-        int modifiedRoll = roll + computer - shipSpec.shield();
+        int modifiedRoll = roll + computer - shipSpec.getShield();
 
         if (roll >= AUTOMATIC_HIT_THRESHOLD) {
             return hits; // Hits automatically

@@ -1,5 +1,7 @@
 package com.nucleartesuji.eclipsecalculator;
 
+import com.nucleartesuji.eclipsecalculator.calculator.ShipSpec;
+
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
@@ -30,7 +32,7 @@ public class DataEntryActivity extends Activity {
     }
 
     private void initializePresets() {
-        defaultPreset = ShipPreset.defaultCruiser();
+        defaultPreset = ShipSpec.Presets.defaultCruiser();
     }
 
     private void prepareOnLongClickListenerForImages() {
@@ -50,7 +52,7 @@ public class DataEntryActivity extends Activity {
             return false;
         }
     };
-    private ShipPreset defaultPreset;
+    private ShipSpec defaultPreset;
 
     private void prepareOnLongClickListenerForImagesUnderContainer(
             ViewGroup containerView) {
@@ -65,8 +67,8 @@ public class DataEntryActivity extends Activity {
         }
     }
 
-    private void loadPreset(ShipPreset preset, String shipPrefix) {
-        setFieldValue(getIdentifier(shipPrefix + "FleetShipCount"),         preset.getShipCount());
+    private void loadPreset(ShipSpec preset, String shipPrefix) {
+        setFieldValue(getIdentifier(shipPrefix + "FleetShipCount"),         1);
         setFieldValue(getIdentifier(shipPrefix + "FleetHull"),              preset.getHull());
         setFieldValue(getIdentifier(shipPrefix + "FleetIonCannons"),        preset.getIonCannons());
         setFieldValue(getIdentifier(shipPrefix + "FleetPlasmaCannons"),     preset.getPlasmaCannons());

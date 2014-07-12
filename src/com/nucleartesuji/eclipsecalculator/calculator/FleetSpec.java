@@ -51,7 +51,7 @@ public class FleetSpec {
     }
 
     public int initiative() {
-        return shipSpec.initiative();
+        return shipSpec.getInitiative();
     }
 
     public String toString() {
