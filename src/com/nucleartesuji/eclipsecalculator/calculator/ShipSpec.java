@@ -135,24 +135,11 @@ public class ShipSpec {
         return new Builder();
     }
 
-    public static class Presets {
-        public static ShipSpec defaultCruiser() {
-            return ShipSpec.builder().setInitiative(2).setIonCannons(1)
-                    .setHull(1).setComputer(1).build();
-        }
-
-        public static ShipSpec ancient() {
-            return ShipSpec.builder().setHull(1).setIonCannons(2)
-                    .setComputer(1).setInitiative(2).build();
-        }
-    }
-
     public static class Presenter {
         private ShipSpec shipSpec;
 
         public Presenter(ShipSpec shipSpec) {
             this.shipSpec = shipSpec;
-
         }
 
         public String toString() {

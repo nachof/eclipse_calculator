@@ -1,6 +1,16 @@
 package com.nucleartesuji.eclipsecalculator;
 
 public class ShipPreset {
+    public static ShipPreset defaultCruiser() {
+        return ShipPreset.builder().setInitiative(2).setIonCannons(1)
+                .setHull(1).setComputer(1).build();
+    }
+
+    public static ShipPreset ancient() {
+        return ShipPreset.builder().setHull(1).setIonCannons(2)
+                .setComputer(1).setInitiative(2).build();
+    }
+
     static class Builder {
         private int hull              = 0;
         private int ionCannons        = 0;

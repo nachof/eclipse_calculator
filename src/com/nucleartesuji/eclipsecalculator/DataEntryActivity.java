@@ -30,7 +30,7 @@ public class DataEntryActivity extends Activity {
     }
 
     private void initializePresets() {
-        defaultPreset = ShipPreset.builder().setHull(1).setIonCannons(2).setComputer(1).setInitiative(2).build();
+        defaultPreset = ShipPreset.defaultCruiser();
     }
 
     private void prepareOnLongClickListenerForImages() {
