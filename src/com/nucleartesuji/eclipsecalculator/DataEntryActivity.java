@@ -23,9 +23,14 @@ public class DataEntryActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_data_entry);
-        setDefaultValues("attack");
-        setDefaultValues("defense");
+        initializePresets();
+        loadPreset(defaultPreset, "attack");
+        loadPreset(defaultPreset, "defense");
         prepareOnLongClickListenerForImages();
+    }
+
+    private void initializePresets() {
+        defaultPreset = ShipPreset.builder().setHull(1).setIonCannons(2).setComputer(1).setInitiative(2).build();
     }
 
     private void prepareOnLongClickListenerForImages() {
@@ -45,6 +50,7 @@ public class DataEntryActivity extends Activity {
             return false;
         }
     };
+    private ShipPreset defaultPreset;
 
     private void prepareOnLongClickListenerForImagesUnderContainer(
             ViewGroup containerView) {
@@ -59,16 +65,16 @@ public class DataEntryActivity extends Activity {
         }
     }
 
-    private void setDefaultValues(String shipPrefix) {
-        setFieldValue(getIdentifier(shipPrefix + "FleetShipCount"), 1);
-        setFieldValue(getIdentifier(shipPrefix + "FleetHull"), 1);
-        setFieldValue(getIdentifier(shipPrefix + "FleetIonCannons"), 2);
-        setFieldValue(getIdentifier(shipPrefix + "FleetPlasmaCannons"), 0);
-        setFieldValue(getIdentifier(shipPrefix + "FleetPlasmaMissiles"), 0);
-        setFieldValue(getIdentifier(shipPrefix + "FleetAntimatterCannons"), 0);
-        setFieldValue(getIdentifier(shipPrefix + "FleetComputer"), 1);
-        setFieldValue(getIdentifier(shipPrefix + "FleetShield"), 0);
-        setFieldValue(getIdentifier(shipPrefix + "FleetInitiative"), 2);
+    private void loadPreset(ShipPreset preset, String shipPrefix) {
+        setFieldValue(getIdentifier(shipPrefix + "FleetShipCount"),         preset.getShipCount());
+        setFieldValue(getIdentifier(shipPrefix + "FleetHull"),              preset.getHull());
+        setFieldValue(getIdentifier(shipPrefix + "FleetIonCannons"),        preset.getIonCannons());
+        setFieldValue(getIdentifier(shipPrefix + "FleetPlasmaCannons"),     preset.getPlasmaCannons());
+        setFieldValue(getIdentifier(shipPrefix + "FleetPlasmaMissiles"),    preset.getPlasmaMissiles());
+        setFieldValue(getIdentifier(shipPrefix + "FleetAntimatterCannons"), preset.getAntimatterCannons());
+        setFieldValue(getIdentifier(shipPrefix + "FleetComputer"),          preset.getComputer());
+        setFieldValue(getIdentifier(shipPrefix + "FleetShield"),            preset.getShield());
+        setFieldValue(getIdentifier(shipPrefix + "FleetInitiative"),        preset.getInitiative());
 
     }
 
