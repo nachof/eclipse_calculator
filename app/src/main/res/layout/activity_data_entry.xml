@@ -207,6 +207,7 @@
                 </EditText>
             </LinearLayout>
 
+
             <LinearLayout
                 android:id="@+id/attackFleetInitiativeContainer"
                 android:layout_width="match_parent"
@@ -227,8 +228,15 @@
                     android:ems="10"
                     android:inputType="number" >
                 </EditText>
+
             </LinearLayout>
-        </LinearLayout>
+
+            <Spinner
+                android:id="@+id/attackFleetPreset"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content" />
+
+            </LinearLayout>
 
         <View
             android:layout_height="match_parent"
@@ -477,6 +485,12 @@
                     android:src="@drawable/tile_initiative" />
 
             </LinearLayout>
+
+            <Spinner
+                android:id="@+id/defenseFleetPreset"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content" />
+
         </LinearLayout>
     </LinearLayout>
 
