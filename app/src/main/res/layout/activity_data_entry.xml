@@ -29,6 +29,11 @@
                 android:text="@string/title_first_fleet"
                 android:textAppearance="?android:attr/textAppearanceLarge" />
 
+            <Spinner
+                android:id="@+id/attackFleetPreset"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content" />
+
             <LinearLayout
                 android:id="@+id/attackFleetShipCountContainer"
                 android:layout_width="match_parent"
@@ -231,10 +236,6 @@
 
             </LinearLayout>
 
-            <Spinner
-                android:id="@+id/attackFleetPreset"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content" />
 
             </LinearLayout>
 
@@ -259,6 +260,11 @@
                 android:gravity="right"
                 android:text="@string/title_second_fleet"
                 android:textAppearance="?android:attr/textAppearanceLarge" />
+
+            <Spinner
+                android:id="@+id/defenseFleetPreset"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content" />
 
             <LinearLayout
                 android:id="@+id/defenseFleetShipCountContainer"
@@ -486,10 +492,6 @@
 
             </LinearLayout>
 
-            <Spinner
-                android:id="@+id/defenseFleetPreset"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content" />
 
         </LinearLayout>
     </LinearLayout>
