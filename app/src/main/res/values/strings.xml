@@ -14,4 +14,7 @@
     <string name="label_shield">Shield</string>
     <string name="label_initiative">Initiative</string>
     <string name="title_activity_results">Battle Odds</string>
+    <string name="preset_name_unnamed">Unnamed</string>
+    <string name="preset_name_ancient">Ancient Ship</string>
+    <string name="preset_name_default_cruiser">Default Cruiser</string>
 </resources>

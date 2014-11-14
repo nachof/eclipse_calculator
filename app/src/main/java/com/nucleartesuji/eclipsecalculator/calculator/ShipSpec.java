@@ -1,5 +1,7 @@
 package com.nucleartesuji.eclipsecalculator.calculator;
 
+import com.nucleartesuji.eclipsecalculator.R;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -17,8 +19,9 @@ public class ShipSpec {
     private int computer = 0;
     private int shield = 0;
     private int initiative = 0;
+    private int label = R.string.preset_name_unnamed;
 
-    public ShipSpec(int hull, int ionCannons, int plasmaCannons,
+    private ShipSpec(int label, int hull, int ionCannons, int plasmaCannons,
             int plasmaMissiles, int antimatterCannons, int computer,
             int shield, int initiative) {
         this.hull = hull;
@@ -29,10 +32,11 @@ public class ShipSpec {
         this.computer = computer;
         this.shield = shield;
         this.initiative = initiative;
+        this.label = label;
     }
 
     private ShipSpec(Builder builder) {
-        this(builder.hull, builder.ionCannons, builder.plasmaCannons,
+        this(builder.label, builder.hull, builder.ionCannons, builder.plasmaCannons,
                 builder.plasmaMissiles, builder.antimatterCannons,
                 builder.computer, builder.shield, builder.initiative);
     }
@@ -76,6 +80,14 @@ public class ShipSpec {
         return ionCannons + plasmaCannons + antimatterCannons;
     }
 
+    public int getLabel() {
+        return label;
+    }
+
+    public void setLabel(int label) {
+        this.label = label;
+    }
+
     public static class Builder {
         private int hull = 0;
         private int ionCannons = 0;
@@ -85,6 +97,7 @@ public class ShipSpec {
         private int computer = 0;
         private int shield = 0;
         private int initiative = 0;
+        private int label = R.string.preset_name_unnamed;
 
         public ShipSpec build() {
             return new ShipSpec(this);
@@ -129,6 +142,11 @@ public class ShipSpec {
             this.shield = shield;
             return this;
         }
+
+        public Builder setLabel(int label) {
+            this.label = label;
+            return this;
+        }
     }
 
     public static Builder builder() {
@@ -137,13 +155,20 @@ public class ShipSpec {
 
     public static class Presets {
         public static ShipSpec defaultCruiser() {
-            return ShipSpec.builder().setInitiative(2).setIonCannons(1)
+            return ShipSpec.builder().setLabel(R.string.preset_name_default_cruiser).setInitiative(2).setIonCannons(1)
                     .setHull(1).setComputer(1).build();
         }
 
         public static ShipSpec ancient() {
-            return ShipSpec.builder().setHull(1).setIonCannons(2)
+            return ShipSpec.builder().setLabel(R.string.preset_name_ancient).setHull(1).setIonCannons(2)
                     .setComputer(1).setInitiative(2).build();
+        }
+
+        public static List<ShipSpec> collection() {
+            List<ShipSpec> result = new ArrayList<ShipSpec>();
+            result.add(defaultCruiser());
+            result.add(ancient());
+            return result;
         }
     }
 
