@@ -21,7 +21,4 @@ public class BattleResult {
         return resultCode == RESULT_CODE_ATTACKER_WINS;
     }
 
-    public boolean wonByDefender() {
-        return resultCode == RESULT_CODE_DEFENDER_WINS;
-    }
 }
