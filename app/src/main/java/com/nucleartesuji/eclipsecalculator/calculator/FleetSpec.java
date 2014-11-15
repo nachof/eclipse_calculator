@@ -12,10 +12,6 @@ public class FleetSpec {
         this.count = count;
     }
 
-    public FleetSpec(ShipSpec shipSpec) {
-        this(shipSpec, 1);
-    }
-
     public void resetDamage() {
         this.damage = 0;
     }
