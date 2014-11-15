@@ -1,6 +1,7 @@
 package com.nucleartesuji.eclipsecalculator;
 
 import com.nucleartesuji.eclipsecalculator.adapters.PresetsSpinnerAdapter;
+import com.nucleartesuji.eclipsecalculator.calculator.ShipPreset;
 import com.nucleartesuji.eclipsecalculator.calculator.ShipSpec;
 
 import android.os.Bundle;
@@ -32,12 +33,12 @@ public class DataEntryActivity extends Activity {
         loadPreset(defaultPreset, "defense");
         prepareOnLongClickListenerForImages();
 
-        ((Spinner)findViewById(R.id.attackFleetPreset)).setAdapter(new PresetsSpinnerAdapter(this, ShipSpec.Presets.collection()));
-        ((Spinner)findViewById(R.id.defenseFleetPreset)).setAdapter(new PresetsSpinnerAdapter(this, ShipSpec.Presets.collection()));
+        ((Spinner)findViewById(R.id.attackFleetPreset)).setAdapter(new PresetsSpinnerAdapter(this, ShipPreset.collection()));
+        ((Spinner)findViewById(R.id.defenseFleetPreset)).setAdapter(new PresetsSpinnerAdapter(this, ShipPreset.collection()));
     }
 
     private void initializePresets() {
-        defaultPreset = ShipSpec.Presets.defaultCruiser();
+        defaultPreset = ShipPreset.defaultCruiser();
     }
 
     private void prepareOnLongClickListenerForImages() {
