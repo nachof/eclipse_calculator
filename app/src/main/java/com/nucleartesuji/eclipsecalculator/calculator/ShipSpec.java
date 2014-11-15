@@ -84,10 +84,6 @@ public class ShipSpec {
         return label;
     }
 
-    public void setLabel(int label) {
-        this.label = label;
-    }
-
     public static class Builder {
         private int hull = 0;
         private int ionCannons = 0;
