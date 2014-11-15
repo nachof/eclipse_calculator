@@ -3,7 +3,7 @@ package com.nucleartesuji.eclipsecalculator.calculator;
 public class BattleResult {
     private static final int RESULT_CODE_DEFENDER_WINS = 2;
     private static final int RESULT_CODE_ATTACKER_WINS = 1;
-    private int resultCode;
+    private final int resultCode;
 
     private BattleResult(int result) {
         this.resultCode = result;

@@ -1,8 +1,8 @@
 package com.nucleartesuji.eclipsecalculator.calculator;
 
 public class Battle {
-    private FleetSpec attacker;
-    private FleetSpec defender;
+    private final FleetSpec attacker;
+    private final FleetSpec defender;
 
     public Battle(FleetSpec attacker, FleetSpec defender) {
         this.attacker = attacker;

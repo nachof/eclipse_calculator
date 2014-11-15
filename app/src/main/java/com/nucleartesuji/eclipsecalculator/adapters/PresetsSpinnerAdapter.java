@@ -17,7 +17,7 @@ import com.nucleartesuji.eclipsecalculator.calculator.ShipSpec;
 import java.util.List;
 
 public class PresetsSpinnerAdapter extends ArrayAdapter<ShipSpec> implements SpinnerAdapter {
-    private List<ShipSpec> collection;
+    private final List<ShipSpec> collection;
 
     public PresetsSpinnerAdapter(Context context, List<ShipSpec> collection) {
         super(context, R.layout.presets_spinner, collection);

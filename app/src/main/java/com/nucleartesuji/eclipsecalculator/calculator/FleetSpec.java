@@ -3,8 +3,8 @@ package com.nucleartesuji.eclipsecalculator.calculator;
 import java.util.List;
 
 public class FleetSpec {
-    private ShipSpec shipSpec;
-    private int count;
+    private final ShipSpec shipSpec;
+    private final int count;
     private int damage;
 
     public FleetSpec(ShipSpec shipSpec, int count) {
@@ -58,7 +58,7 @@ public class FleetSpec {
     }
 
     public static class Presenter {
-        private FleetSpec fleetSpec;
+        private final FleetSpec fleetSpec;
 
         public Presenter(FleetSpec fleetSpec) {
             this.fleetSpec = fleetSpec;

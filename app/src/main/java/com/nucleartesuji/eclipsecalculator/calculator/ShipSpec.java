@@ -169,7 +169,7 @@ public class ShipSpec {
     }
 
     public static class Presenter {
-        private ShipSpec shipSpec;
+        private final ShipSpec shipSpec;
 
         public Presenter(ShipSpec shipSpec) {
             this.shipSpec = shipSpec;

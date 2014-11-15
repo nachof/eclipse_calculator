@@ -4,8 +4,8 @@ public class AttackDie {
     private static final int AUTOMATIC_MISS_THRESHOLD = 1;
     private static final int AUTOMATIC_HIT_THRESHOLD = 6;
     private static final int HIT_THRESHOLD = 6;
-    private int hits;
-    private int computer;
+    private final int hits;
+    private final int computer;
 
     public AttackDie(int hits, int computer) {
         this.hits = hits;

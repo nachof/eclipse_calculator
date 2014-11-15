@@ -4,8 +4,8 @@ public class Simulation {
     private static final int DEFAULT_FIGHT_ROUNDS = 1000;
     private int doneRounds = 0;
     private int attackerWinsRounds = 0;
-    private FleetSpec attackerFleet;
-    private FleetSpec defenderFleet;
+    private final FleetSpec attackerFleet;
+    private final FleetSpec defenderFleet;
 
     public Simulation(FleetSpec attacker, FleetSpec defender) {
         attackerFleet = attacker;
