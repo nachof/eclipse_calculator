@@ -9,14 +9,14 @@ public class ShipSpec {
     private static final int ANTIMATTER_CANNON_HITS = 4;
     private static final int PLASMA_MISSILE_HITS = 2;
 
-    private int hull = 0;
-    private int ionCannons = 0;
-    private int plasmaCannons = 0;
-    private int plasmaMissiles = 0;
-    private int antimatterCannons = 0;
-    private int computer = 0;
-    private int shield = 0;
-    private int initiative = 0;
+    private final int hull;
+    private final int ionCannons;
+    private final int plasmaCannons;
+    private final int plasmaMissiles;
+    private final int antimatterCannons;
+    private final int computer;
+    private final int shield;
+    private final int initiative;
 
     private ShipSpec(int hull, int ionCannons, int plasmaCannons,
             int plasmaMissiles, int antimatterCannons, int computer,
