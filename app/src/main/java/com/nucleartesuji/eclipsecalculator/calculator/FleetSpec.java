@@ -65,11 +65,7 @@ public class FleetSpec {
         }
 
         public String toString() {
-            StringBuilder result = new StringBuilder();
-            result.append(Integer.toString(fleetSpec.count));
-            result.append(" ship: ");
-            result.append(fleetSpec.shipSpec.toString());
-            return result.toString();
+            return Integer.toString(fleetSpec.count) + " ship: " + fleetSpec.shipSpec.toString();
         }
     }
 
