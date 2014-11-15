@@ -94,6 +94,7 @@ public class ResultsActivity extends Activity {
      */
     private void setupActionBar() {
 
+        //noinspection ConstantConditions
         getActionBar().setDisplayHomeAsUpEnabled(true);
 
     }
