@@ -13,11 +13,15 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Spinner;
+import android.widget.SpinnerAdapter;
 import android.widget.Toast;
+
+import java.util.List;
 
 public class DataEntryActivity extends Activity {
 
@@ -33,8 +37,13 @@ public class DataEntryActivity extends Activity {
         loadPreset(defaultPreset.getShipSpec(), "defense");
         prepareOnLongClickListenerForImages();
 
-        ((Spinner)findViewById(R.id.attackFleetPreset)).setAdapter(new PresetsSpinnerAdapter(this, ShipPreset.collection()));
-        ((Spinner)findViewById(R.id.defenseFleetPreset)).setAdapter(new PresetsSpinnerAdapter(this, ShipPreset.collection()));
+        List<ShipPreset> presets = ShipPreset.collection();
+        SpinnerAdapter adapter = new PresetsSpinnerAdapter(this, presets);
+        ((Spinner)findViewById(R.id.attackFleetPreset)).setAdapter(adapter);
+        ((Spinner)findViewById(R.id.defenseFleetPreset)).setAdapter(adapter);
+        ((Spinner) findViewById(R.id.attackFleetPreset)).setOnItemSelectedListener(new PresetSelectionListener("attack"));
+        ((Spinner) findViewById(R.id.defenseFleetPreset)).setOnItemSelectedListener(new PresetSelectionListener("defense"));
+
     }
 
     private void initializePresets() {
@@ -147,5 +156,23 @@ public class DataEntryActivity extends Activity {
             intVal = 0;
         }
         ship.putInt(fieldKey, intVal);
+    }
+
+    private class PresetSelectionListener implements AdapterView.OnItemSelectedListener {
+        private final String groupIdentifier;
+
+        public PresetSelectionListener(String groupIdentifier) {
+            this.groupIdentifier = groupIdentifier;
+        }
+
+        @Override
+        public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+            loadPreset(((ShipPreset)parent.getAdapter().getItem(position)).getShipSpec(), groupIdentifier);
+        }
+
+        @Override
+        public void onNothingSelected(AdapterView<?> parent) {
+            // Do nothing
+        }
     }
 }

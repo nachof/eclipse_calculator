@@ -78,4 +78,6 @@ public class PresetsSpinnerAdapter extends ArrayAdapter<ShipPreset> implements S
         ((TextView) row.findViewById(R.id.presetName)).setText(getContext().getString(item.getLabel()));
         return row;
     }
+
+
 }
