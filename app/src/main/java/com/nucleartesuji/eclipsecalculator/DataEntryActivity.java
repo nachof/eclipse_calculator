@@ -29,8 +29,8 @@ public class DataEntryActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_data_entry);
         initializePresets();
-        loadPreset(defaultPreset, "attack");
-        loadPreset(defaultPreset, "defense");
+        loadPreset(defaultPreset.getShipSpec(), "attack");
+        loadPreset(defaultPreset.getShipSpec(), "defense");
         prepareOnLongClickListenerForImages();
 
         ((Spinner)findViewById(R.id.attackFleetPreset)).setAdapter(new PresetsSpinnerAdapter(this, ShipPreset.collection()));
@@ -58,7 +58,7 @@ public class DataEntryActivity extends Activity {
             return false;
         }
     };
-    private ShipSpec defaultPreset;
+    private ShipPreset defaultPreset;
 
     private void prepareOnLongClickListenerForImagesUnderContainer(
             ViewGroup containerView) {

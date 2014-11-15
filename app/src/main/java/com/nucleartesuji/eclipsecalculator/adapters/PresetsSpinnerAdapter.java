@@ -12,14 +12,14 @@ import android.widget.SpinnerAdapter;
 import android.widget.TextView;
 
 import com.nucleartesuji.eclipsecalculator.R;
-import com.nucleartesuji.eclipsecalculator.calculator.ShipSpec;
+import com.nucleartesuji.eclipsecalculator.calculator.ShipPreset;
 
 import java.util.List;
 
-public class PresetsSpinnerAdapter extends ArrayAdapter<ShipSpec> implements SpinnerAdapter {
-    private final List<ShipSpec> collection;
+public class PresetsSpinnerAdapter extends ArrayAdapter<ShipPreset> implements SpinnerAdapter {
+    private final List<ShipPreset> collection;
 
-    public PresetsSpinnerAdapter(Context context, List<ShipSpec> collection) {
+    public PresetsSpinnerAdapter(Context context, List<ShipPreset> collection) {
         super(context, R.layout.presets_spinner, collection);
         this.collection = collection;
     }
@@ -33,18 +33,18 @@ public class PresetsSpinnerAdapter extends ArrayAdapter<ShipSpec> implements Spi
 
     @Override
     public View getDropDownView(int position, View convertView, ViewGroup parent) {
-        ShipSpec item = collection.get(position);
+        ShipPreset item = collection.get(position);
         View base = prepareBaseView(convertView, getItem(position));
         ViewGroup descLayout = (ViewGroup) base.findViewById(R.id.presetDescription);
         descLayout.removeAllViews();
         descLayout.setVisibility(View.VISIBLE);
-        addDescPart(descLayout, R.drawable.tile_antimatter_cannon, item.getAntimatterCannons());
-        addDescPart(descLayout, R.drawable.tile_ion_cannon,        item.getIonCannons());
-        addDescPart(descLayout, R.drawable.tile_electron_computer, item.getComputer());
-        addDescPart(descLayout, R.drawable.tile_hull,              item.getHull());
-        addDescPart(descLayout, R.drawable.tile_initiative,        item.getInitiative());
-        addDescPart(descLayout, R.drawable.tile_plasma_cannon,     item.getPlasmaCannons());
-        addDescPart(descLayout, R.drawable.tile_plasma_missiles,   item.getPlasmaMissiles());
+        addDescPart(descLayout, R.drawable.tile_antimatter_cannon, item.getShipSpec().getAntimatterCannons());
+        addDescPart(descLayout, R.drawable.tile_ion_cannon,        item.getShipSpec().getIonCannons());
+        addDescPart(descLayout, R.drawable.tile_electron_computer, item.getShipSpec().getComputer());
+        addDescPart(descLayout, R.drawable.tile_hull,              item.getShipSpec().getHull());
+        addDescPart(descLayout, R.drawable.tile_initiative,        item.getShipSpec().getInitiative());
+        addDescPart(descLayout, R.drawable.tile_plasma_cannon,     item.getShipSpec().getPlasmaCannons());
+        addDescPart(descLayout, R.drawable.tile_plasma_missiles,   item.getShipSpec().getPlasmaMissiles());
         return base;
     }
 
@@ -70,7 +70,7 @@ public class PresetsSpinnerAdapter extends ArrayAdapter<ShipSpec> implements Spi
         }
     }
 
-    private View prepareBaseView(View convertView, ShipSpec item) {
+    private View prepareBaseView(View convertView, ShipPreset item) {
         View row = convertView;
         if (row == null) {
             row = View.inflate(getContext(), R.layout.presets_spinner, null);
