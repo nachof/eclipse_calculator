@@ -37,9 +37,8 @@ public class FleetSpec {
     private int aliveCount() {
         int hitPoints = shipSpec.hitPoints();
         int totalHitPoints = hitPoints * count;
-        int remaining = (int) Math.ceil(((double) totalHitPoints - damage)
+        return (int) Math.ceil(((double) totalHitPoints - damage)
                 / hitPoints);
-        return remaining;
     }
 
     public boolean alive() {
