@@ -13,5 +13,5 @@
         android:layout_height="wrap_content"
         android:id="@+id/presetDescription"
         android:orientation="horizontal"
-        android:visibility="gone"></LinearLayout>
+        android:visibility="gone"/>
 </LinearLayout>
