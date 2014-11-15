@@ -1,6 +1,6 @@
 package com.nucleartesuji.eclipsecalculator.calculator;
 
-public class Battle {
+class Battle {
     private final FleetSpec attacker;
     private final FleetSpec defender;
 

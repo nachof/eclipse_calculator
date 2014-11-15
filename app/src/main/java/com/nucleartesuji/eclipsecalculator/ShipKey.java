@@ -1,7 +1,6 @@
 package com.nucleartesuji.eclipsecalculator;
 
-public class ShipKey {
-
+class ShipKey {
     public static final String KEY_SHIP_COUNT = "shipdata.count";
     public static final String KEY_HULL = "shipdata.hull";
     public static final String KEY_ION_CANNONS = "shipdata.ion_cannons";

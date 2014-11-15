@@ -1,6 +1,6 @@
 package com.nucleartesuji.eclipsecalculator.calculator;
 
-public class AttackDie {
+class AttackDie {
     private static final int AUTOMATIC_MISS_THRESHOLD = 1;
     private static final int AUTOMATIC_HIT_THRESHOLD = 6;
     private static final int HIT_THRESHOLD = 6;
