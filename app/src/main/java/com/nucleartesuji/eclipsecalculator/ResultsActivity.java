@@ -96,7 +96,6 @@ public class ResultsActivity extends Activity {
 
         //noinspection ConstantConditions
         getActionBar().setDisplayHomeAsUpEnabled(true);
-
     }
 
     @Override

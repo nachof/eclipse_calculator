@@ -39,10 +39,13 @@ public class DataEntryActivity extends Activity {
 
         List<ShipPreset> presets = ShipPreset.collection();
         SpinnerAdapter adapter = new PresetsSpinnerAdapter(this, presets);
-        ((Spinner)findViewById(R.id.attackFleetPreset)).setAdapter(adapter);
-        ((Spinner)findViewById(R.id.defenseFleetPreset)).setAdapter(adapter);
-        ((Spinner) findViewById(R.id.attackFleetPreset)).setOnItemSelectedListener(new PresetSelectionListener("attack"));
-        ((Spinner) findViewById(R.id.defenseFleetPreset)).setOnItemSelectedListener(new PresetSelectionListener("defense"));
+
+        Spinner attackSpinner = (Spinner) findViewById(R.id.attackFleetPreset);
+        Spinner defenseSpinner = (Spinner) findViewById(R.id.defenseFleetPreset);
+        defenseSpinner.setAdapter(adapter);
+        attackSpinner.setAdapter(adapter);
+        defenseSpinner.setOnItemSelectedListener(new PresetSelectionListener("attack"));
+        attackSpinner.setOnItemSelectedListener(new PresetSelectionListener("defense"));
 
     }
 
