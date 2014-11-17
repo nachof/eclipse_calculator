@@ -44,8 +44,8 @@ public class DataEntryActivity extends Activity {
         Spinner defenseSpinner = (Spinner) findViewById(R.id.defenseFleetPreset);
         defenseSpinner.setAdapter(adapter);
         attackSpinner.setAdapter(adapter);
-        defenseSpinner.setOnItemSelectedListener(new PresetSelectionListener("attack"));
-        attackSpinner.setOnItemSelectedListener(new PresetSelectionListener("defense"));
+        defenseSpinner.setOnItemSelectedListener(new PresetSelectionListener("defense"));
+        attackSpinner.setOnItemSelectedListener(new PresetSelectionListener("attack"));
 
     }
 
