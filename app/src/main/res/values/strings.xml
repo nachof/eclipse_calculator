@@ -17,4 +17,11 @@
     <string name="preset_name_unnamed">&lt;&lt;Unnamed&gt;&gt;</string>
     <string name="preset_name_ancient">Ancient Ship</string>
     <string name="preset_name_default_cruiser">Default Cruiser</string>
+    <string name="preset_name_default_dreadnought">Default Dreadnought</string>
+    <string name="preset_name_default_interceptor">Default Interceptor</string>
+    <string name="preset_name_orion_interceptor">Orion Interceptor</string>
+    <string name="preset_name_orion_cruiser">Orion Cruiser</string>
+    <string name="preset_name_orion_dreadnought">Orion Dreadnought</string>
+    <string name="preset_name_planta_interceptor">Planta Interceptor</string>
+    <string name="preset_name_planta_cruiser">Planta Cruiser</string>
 </resources>
