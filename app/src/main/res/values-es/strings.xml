@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Calculadora de Eclipse</string>
+    <string name="app_name">Calculadora de Probabilidades de Batalla para Eclipse</string>
     <string name="action_calculate">Calcular probabilidades</string>
     <string name="title_first_fleet">Flota atacante</string>
     <string name="title_second_fleet">Flota defensora</string>
